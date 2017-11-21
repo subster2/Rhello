@@ -31,12 +31,12 @@ LOO <- function(test_table_class , k){
   return(res_sum / nrow(test_table_class))
 }
 
-#point_to_classify <- c(3, 2)
+
 x_sign <- iris[ ,3]
 y_sign <- iris[ ,4]
 class_of_sign <- iris[ ,5]
 test_table_class <- data.frame(x_sign , y_sign , class_of_sign)
-#k <- 3
+
 x <- c()
 y <- c()
 
@@ -47,4 +47,3 @@ for(k in 1:nrow(test_table_class))
   print(k)
   print(LOO(test_table_class, k))
 }
-#to_classify <- KNN(test_table_class , point_to_classify, k)
