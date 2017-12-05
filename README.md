@@ -73,7 +73,39 @@ LOO или критерий скользящего контроля:
 4. Когда все объекты **x(i)** будут перебраны, вычислить **LOO = Q / l**, где **l** - количество объектов выборки.
 
 Рассмотрим работу LOO для KNN: лучший результат классификации будет достигаться при K=7, а значение критерия Q = 0.0333(3)
-Сам код: [LOO](KNN withh LOO/KNNwithLOO.R)
+Сам код: [LOO](https://github.com/subster2/Rhello/blob/master/KNN%20withh%20LOO/KNNwithLOO.R)
 
 ![alt text](https://github.com/subster2/Rhello/blob/master/KNN%20withh%20LOO/KNNloo.png)
+
+
+## Алгоритм k взвешенных ближайших соседей (wkNN)
+
+Для оценки близости используется функция:
+
+**ω(i, u) = [i =< k]qi** — метод **k** экспоненциально взвешенных ближайших соседей, где предполагается **q < 1**
+
+Реализация здесь : [wKNN](https://github.com/subster2/Rhello/blob/master/KNN-weight/KNN-w.R)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
