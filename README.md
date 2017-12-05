@@ -88,7 +88,9 @@ LOO или критерий скользящего контроля:
 
 Лучший показатель LOO = 0.04, а параметр q = 0.56
 
-![alt text](https://github.com/subster2/Rhello/blob/master/KNN-weight/KwNN1.png)
+Пример для для оптимального q и не оптимальных:
+
+![alt text](https://github.com/subster2/Rhello/blob/master/KNN-weight/KwNN3.png)
 
 
 
