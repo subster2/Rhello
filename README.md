@@ -40,10 +40,13 @@ KNN <- function(yl , point_to_classify, k , metric = euclideanDistance){
   return(names(which.max(class_iris))) # возвращаем название класса к которому принадлежит точка
 }
 ```
-для ознакомление с полным кодом : [KNN](Rhello/KNN-simple/KNN.R)
+для ознакомление с полным кодом : [KNN](KNN-simple/KNN.R)
 
 Пример выборки IrisFishers
 ![alt text](https://github.com/subster2/Rhello/blob/master/KNN-simple/RKnn.png)
+
+А также наглядно преймущество **KNN**(в данном случае **k=2**) над **1NN**
+![alt text](https://github.com/subster2/Rhello/blob/master/KNN-simple/newNN.png)
 
 ### Преимущества:
 I. Простота реализации.
