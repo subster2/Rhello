@@ -86,6 +86,8 @@ LOO или критерий скользящего контроля:
 
 Реализация здесь : [wKNN](https://github.com/subster2/Rhello/blob/master/KNN-weight/KNN-w.R)
 
+Лучший показатель LOO = 0.04, а параметр q = 0.56
+
 ![alt text](https://github.com/subster2/Rhello/blob/master/KNN-weight/KwNN.png)
 
 
