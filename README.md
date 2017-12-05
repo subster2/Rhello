@@ -86,7 +86,7 @@ LOO или критерий скользящего контроля:
 
 Реализация здесь : [wKNN](https://github.com/subster2/Rhello/blob/master/KNN-weight/KNN-w.R)
 
-
+![alt text](https://github.com/subster2/Rhello/blob/master/KNN-weight/KwNN.png)
 
 
 
