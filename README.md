@@ -149,22 +149,22 @@ V. Проблема классификации при равных весах к
 
 Нахождение потенциала:
 ```
-gamma_potentials <- function(iris, Core, h) {
-  eps <- 0.15 # accuracy
+g_potentials <- function(iris, Core, h) {
+  eps <- 0.2 
   xl <- iris[, 3:5]                  
   l <- dim(xl)[1]
-  gamma <- c()
+  potent <- c()
   for(i in 1:l) {
-    gamma[i] <- 0
+    potent[i] <- 0
   }
-  while(LOO_gamma(iris, gamma, Core, h) > eps) {
+  while(LOO_gamma(iris, potent, Core, h) > eps) {
     random <- sample(i, 1, replace = T) # random number in 1:l
-    random_point <- c(xl[random, 1], xl[random, 2])
-    if(pf(iris, random_point, gamma, Core, h) != xl[random, 3]) {
-      gamma[random] <- gamma[random] + 1
+    random_point <- c(xl[random, 1], xl[random, 2]) # choose random x_i
+    if(pf(iris, random_point, gamma, Core, h) != xl[random, 3]) { #if algorithm is mistaken on x_i, then potential i object ++
+      potent[random] <- potent[random] + 1
     }
   }
-  return(gamma)
+  return(potent)
 }
 ```
 
