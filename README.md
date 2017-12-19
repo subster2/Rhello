@@ -163,8 +163,6 @@ gamma_potentials <- function(iris, Core, h) {
     if(pf(iris, random_point, gamma, Core, h) != xl[random, 3]) {
       gamma[random] <- gamma[random] + 1
     }
-    print("gamma:")
-    print(gamma)
   }
   return(gamma)
 }
