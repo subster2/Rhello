@@ -153,4 +153,36 @@ V. Проблема классификации при равных весах к
 
 ![alt text](https://github.com/subster2/Rhello/blob/master/PF/PFh%3D0.4CoreTriang.png)
 
+## Сравнительная таблица метрических алгоритмов
+
+ <table border = 2 width = "60%">
+   <tr>
+      <td width = "30%" align = center><b>Алгоритм</b></td>
+      <td width = "15%" align = center><i>kNN</i></td>
+      <td width = "15%" align = center><i>KwNN</i></td>
+      <td width = "15%" align = center><i>Парзеновское окно</i></td>
+   </tr>
+   
+   <tr>
+      <td width = "30%" align = center><b>Оптимальный параметр</b></td>
+      <td width = "15%" align = center>k_opt = 6</td>
+      <td width = "15%" align = center>q_opt = 0.6</td>
+      <td width = "15%" align = center>h_opt = 0.4</td>
+   </tr>
+      
+   <tr>
+      <td width = "30%" align = center><b>LOO optim</b></td>
+      <td width = "15%" align = center>0.03333333</td>
+      <td width = "15%" align = center>0.04</td>
+      <td width = "15%" align = center>0.04</td>
+   </tr> 
+   
+   <tr>
+      <td width = "30%" align = center><b>number of mistakes</b></td>
+      <td width = "15%" align = center>5</td>
+      <td width = "15%" align = center>6</td>
+      <td width = "15%" align = center>6</td>
+   </tr> 
+ </table>
+
 
