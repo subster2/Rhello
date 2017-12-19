@@ -172,7 +172,7 @@ V. Проблема классификации при равных весах к
       
    <tr>
       <td width = "30%" align = center><b>LOO optim</b></td>
-      <td width = "15%" align = center>0.03333333</td>
+      <td width = "15%" align = center>0.0(3)</td>
       <td width = "15%" align = center>0.04</td>
       <td width = "15%" align = center>0.04</td>
    </tr> 
