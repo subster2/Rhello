@@ -147,6 +147,28 @@ V. Проблема классификации при равных весах к
 
 где ![](https://latex.codecogs.com/gif.latex?%5Cgamma_%7Bi%7D). - потенциал
 
+Нахождение потенциала:
+```
+gamma_potentials <- function(iris, Core, h) {
+  eps <- 0.15 # accuracy
+  xl <- iris[, 3:5]                  
+  l <- dim(xl)[1]
+  gamma <- c()
+  for(i in 1:l) {
+    gamma[i] <- 0
+  }
+  while(LOO_gamma(iris, gamma, Core, h) > eps) {
+    random <- sample(i, 1, replace = T) # random number in 1:l
+    random_point <- c(xl[random, 1], xl[random, 2])
+    if(pf(iris, random_point, gamma, Core, h) != xl[random, 3]) {
+      gamma[random] <- gamma[random] + 1
+    }
+    print("gamma:")
+    print(gamma)
+  }
+  return(gamma)
+}
+```
 
 Классификации объектов находящихся в диапазоне расположения объектов **x(i)** выборки **Xl**, для прямоугольного ядра ядра при **h=0.4** (черные - точки у которых ненулевой потенциал):
 
