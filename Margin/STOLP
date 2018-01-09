@@ -1,0 +1,86 @@
+distance <- function(x1, x2)
+{
+  return(sqrt(sum((x1 - x2) ^ 2)))
+}
+
+w <- function(i,k=0,q=0) #âåñîâàÿ ô-öèÿ
+{
+  if(k>0) {
+    (k+1-i)/k
+  }
+  else if(q>0&q<1){
+    q^i
+  }
+  else return(-1)
+}
+
+printer <- function() {
+  plot(marginsArr, type="l",lwd=3,xlim =c(0,150), ylim = c(-2,2), xlab = "index (sorted)", ylab ="margin")
+  rect(xleft = 13, xright = 140,ybottom = -3,ytop = 2.5,col = "light green",border = NA)
+  rect(xleft = 140, xright = 150,ybottom = -3,ytop = 2.5,col = "green",border = NA)
+  rect(xleft = 6, xright = 13,ybottom = -3,ytop = 2.5,col = "yellow",border = NA)
+  rect(xleft = 0, xright = 6,ybottom = -3,ytop = 2.5,col = "red",border = NA)
+  lines(marginsArr,lwd=2)
+  cat("Done!")
+}
+
+margin <- function(inputData,i)
+{
+  l <- dim(inputData)[1]
+  n <- dim(inputData)[2] - 1
+  classesList <- unique(inputData[,n+1])
+  counts <- rep(0,length(classesList))
+  distances <- matrix(NA, l, 2)
+  for (j in 1:l)
+  {
+    distances[j, ] <- c(j, distance(inputData[i, 1:n], inputData[j,1:n]))
+  }
+  orderedinputData <- inputData[order(distances[-i, 2]), ]
+  for(j in  1:(l-1))
+  {
+    ind <- which(orderedinputData[j,n+1]==classesList)
+    counts[ind] <- counts[ind]+w(j,k=l)
+  }
+  margY <- counts[which(inputData[i,n+1]==classesList)]
+  margNY <- max(counts[-which(inputData[i,n+1]==classesList)]) 
+  if(margY<margNY) return(margY-margNY)
+  else return(margY/margNY)
+}
+
+plot(NULL, NULL, type = "l", xlim = c(min(iris[, 3]), max(iris[, 3])), ylim = c(min(iris[, 4]), max(iris[, 4])), xlab = 'Petal.Length', ylab = 'Petal.Width')
+marginsArr<-c()
+marginsInd<-c()
+le<-150
+for(k in 1:150){
+  if (margin(iris,k)>0){
+  marginsArr[k]<-margin(iris,k)
+  }
+  else {
+    le<-le-1
+    marginsArr[k]<- -20
+  }
+}
+
+colors <- c("setosa" = "red", "versicolor" = "green3",
+            "virginica" = "blue")
+points(iris[, 3:4], pch = 21, bg = colors[iris$Species], col
+       = colors[iris$Species], asp = 1)
+Etalon <- c(max(marginsArr[1:50]),max(marginsArr[51:100]),max(marginsArr[101:150]))
+EtalonInd <- c(match(max(marginsArr[1:50]),marginsArr),match(max(marginsArr[51:100]),marginsArr),match(max(marginsArr[101:150]),marginsArr))
+print(Etalon)
+print(EtalonInd)
+#marginsArr[EtalonInd[1:nrow(Etalon)]]<- -20
+#print(marginsArr)
+#print(ncol(EtalonInd))
+for(k in 1:150){
+  if(marginsArr[k] == -20) points(iris[k,3:4],pch = 21,col ="red")
+}
+
+#while (nrow(Etalon)!=l){
+  
+  
+  
+#}
+
+#marginsArr<-sort(marginsArr)
+#printer()
