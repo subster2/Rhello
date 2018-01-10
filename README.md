@@ -456,6 +456,25 @@ I.Низкое качество классификации.
 
 где  ![](http://www.machinelearning.ru/mimetex/?w_j) — вес **j**-го признака,  ![](http://www.machinelearning.ru/mimetex/?w_0) — порог принятия решения, ![](http://www.machinelearning.ru/mimetex/?w=(w_0,w_1,\ldots,w_n)) — вектор весов, ![](http://www.machinelearning.ru/mimetex/?\langle%20x,w%20\rangle) — скалярное произведение признакового описания объекта на вектор весов. Предполагается, что искусственно введён «константный» нулевой признак: ![](http://www.machinelearning.ru/mimetex/?f_{0}(x)=-1)
 
+## Метод логистической регрессии
+
+Задача обучения линейного классификатора заключается в том, чтобы по выборке  ![](http://www.machinelearning.ru/mimetex/?X^m) настроить вектор весов **w**. В логистической регрессии для этого решается задача минимизации эмпирического риска с функцией потерь специального вида:
+
+![](http://www.machinelearning.ru/mimetex/?Q(w)%20=%20\sum_{i=1}^m%20\ln\left(%201%20+%20\exp(%20-y_i%20\langle%20x_i,w%20\rangle%20)%20\right)%20\to%20\min_{w}.)
+
+После того, как решение w найдено, становится возможным не только вычислять классификацию ![](http://www.machinelearning.ru/mimetex/?a(x)%20=%20\mathrm{sign}\langle%20x,w%20\rangle) для произвольного объекта **x**, но и оценивать апостериорные вероятности его принадлежности классам:
+
+![](http://www.machinelearning.ru/mimetex/?\mathbb{P}\{y|x\}%20=%20\sigma\left(%20y%20\langle%20x,w%20\rangle\right),\;\;%20y\in%20Y,)
+
+где ![](http://www.machinelearning.ru/mimetex/?\sigma(z)%20=%20\frac1{1+e^{-z}}) — сигмоидная функция. Во многих приложениях апостериорные вероятности необходимы для оценивания рисков, связанных с возможными ошибками классификации.
+
+Пример работы и [код](https://github.com/subster2/Rhello/blob/master/LogistRegr/LR.r)
+
+![](https://github.com/subster2/Rhello/blob/master/LogistRegr/Logreg.png)
+
+
+
+
 
 ## Метод опорных векторов (Support Vector Machines)
 
