@@ -513,7 +513,7 @@ I.Низкое качество классификации.
 ![](https://github.com/subster2/Rhello/blob/master/SVM/SVM3.png)
 
 Пример линенейно	неразделимой	выборки с	средним числом	объектов,	«мешающих» линейной	отделимости.
-![](https://github.com/subster2/Rhello/blob/master/SVM/SVM4.png)
+![](https://github.com/subster2/Rhello/blob/master/SVM/SVM6.png)
 
 
 
