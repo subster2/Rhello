@@ -470,7 +470,7 @@ I.Низкое качество классификации.
 
 Пример работы и [код](https://github.com/subster2/Rhello/blob/master/LogistRegr/LR.r)
 
-![](https://github.com/subster2/Rhello/blob/master/LogistRegr/LoGreg2.0.png)
+![](https://github.com/subster2/Rhello/blob/master/LogistRegr/LogistRegr.png)
 
 
 
